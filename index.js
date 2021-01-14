@@ -103,14 +103,35 @@ class Shape {
     }
     getArea() { };
 }
-class Circle extends Shape{
-    constructor(radius){
+class Circle extends Shape {
+    constructor(radius) {
         super('Circle');
         this._radius = radius;
     }
-    getArea(){
-        return (this._radius * this._radius) * 3,14;
+    getArea() {
+        return (this._radius * this._radius) * 3, 14;
     }
 }
 const circle = new Circle(23);
 console.log(circle.getArea());
+
+const users = [
+    {
+        names: 'namees surnamees'
+    },
+    {
+        names: 'namees2 surnamees2',
+    }
+];
+
+for (const item of users) {
+    console.log(item.names);
+}
+
+function sum(a,b, ...args) {
+    let res = a+b;
+    for (const item of args) {
+        res += item;
+    }
+    return res
+}
