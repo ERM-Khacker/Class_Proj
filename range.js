@@ -12,8 +12,8 @@ class RangeValidator {
         if (typeof v !== 'number') {
             throw new TypeError('Data must be a number');
         }
-        if (v >= this._to) {
-            throw new RangeError('The number must not be more than (to)');
+        if (v > this._to) {
+            throw new RangeError('The number must not be more than (from)');
         }
         this._from = v;
     }
@@ -26,8 +26,8 @@ class RangeValidator {
         if (typeof v !== 'number') {
             throw new TypeError('Data must be a number');
         }
-        if (v <= this._from) {
-            throw new RangeError('The number have not be less than (from)');
+        if (v < this._from) {
+            throw new RangeError('The number have not be less than (to)');
         }
         this._to = v;
     }
@@ -48,7 +48,7 @@ class RangeValidator {
 
 }
 
-const num = new RangeValidator(1, 100);
+const num = new RangeValidator(1000, 100);
 const someNum = 30;
 console.log(num.validate(someNum));
 
