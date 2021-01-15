@@ -1,5 +1,7 @@
 class RangeValidator {
     constructor(from = 0, to = 0) {
+        this.from = from;
+        this.to = to;
     }
 
     get from() {
@@ -48,4 +50,5 @@ class RangeValidator {
 
 const num = new RangeValidator(1, 100);
 const someNum = 30;
+console.log(num.validate(someNum));
 
