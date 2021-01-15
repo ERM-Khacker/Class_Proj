@@ -1,7 +1,5 @@
 class RangeValidator {
     constructor(from = 0, to = 0) {
-        this._from = from;
-        this._to = to;
     }
 
     get from() {
@@ -41,9 +39,8 @@ class RangeValidator {
         }
         if (number >= this._from && number <= this._to) {
             return number;
-        } else {
+        } 
             throw new RangeError('The number is out of range');
-        }
     }
 
 }
