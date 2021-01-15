@@ -48,7 +48,7 @@ class RangeValidator {
 
 }
 
-const num = new RangeValidator(1000, 100);
+const num = new RangeValidator(10, 100);
 const someNum = 30;
 console.log(num.validate(someNum));
 
