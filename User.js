@@ -32,29 +32,31 @@ class User {
 }
 
 class Student extends User {
-    constructor(name, surname, year) {
+    constructor(name, surname, yearOfAdmission) {
         super(name, surname);
-        this.year = year;
+        this.yearOfAdmission = yearOfAdmission;
     }
 
     get year() {
-        return this._year;
+        return this._yearOfAdmission;
     }
 
     set year(v) {
         if (typeof v !== 'number') {
             throw new TypeError('Year have to a number');
         }
-        this._year = v;
+        if (v < 2016) {
+            throw new RangeError('You are not a student)))');
+        }
+        this._yearOfAdmission = v;
     }
 
     getCourse() {
-        const course = new Date;
-        course.getFullYear();
-        return course - this.year;
+        const course = new Date();
+        return `${course.getFullYear() - this.yearOfAdmission} курс`;
     }
-
 }
 
-const stud = new Student('Test','Test',2012);
+const stud = new Student('Test', 'Testovna', 2016);
+console.log(stud.getFullName());
 console.log(stud.getCourse());
